@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Language Translation Example</title>
+</head>
+
+<body>
+
+    <!-- LANGUAGE TOGGLE -->
+    <div id="langSelect" class="selectbox"></div>
+
+    <div class="centered-wrapper">
+        <div class="centered">
+            <div class="headerWrap">
+                <h1 data-translate="welcome"></h1>
+            </div>
+            <h2>Introduction</h2>
+            <ol>
+              <li>Unable to translate your website into other languages due to restrictions on a captive network? This example was created as a workaround for just such an occasion.</li>
+            </ol>
+            <h2>Instructions</h2>
+            <ol>
+                <li>Include language.js in the footer of your page(s). <code>&lt;script src="language.js"&gt;&lt;/script&gt;</code>
+                </li>
+                <li>Add <code> &lt;div id="langSelect"&gt;&lt;/div&gt;</code> on your page and style your way.</li>
+                <li>Add data-translate="somevalue" to any and all html elements you wish to have translated like &lt;div data-translate="welcome"&gt;&lt;/div&gt;.</li>
+                <li>Add additional entries to the language.js portalDict object for your appropriate languages.</li>
+                <li>Add additional language selections to the portalLang object in language.js.</li>
+                <li>Modify default language by editing <code>defaultLanguage = "EN" in language.js.</code></li>
+                <li>Handy script for pages and sites that are on a restrictive network or walled garden and lack external translation API access.</li>
+                <li>For additional examples see README.txt</li>
+            </ol>
+            <form>
+
+                <input type="text" name="textfield" id="textfield" data-translate="placeholder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                <label for="lastname" data-translate="placeholder">Last Name</label>
+                <button type="button" value="SUBMIT" data-translate="button"></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- LANGUAGE PLUGIN -->
+    <script src="language.js"></script>
+
+    <script>
+    $(function() {
+        causeRepaintsOn = $("h1, h2");
+
+        $(window).resize(function() {
+            causeRepaintsOn.css("z-index", 1);
+        });
+    });
+    </script>
+
+</body>
+
+</html>
